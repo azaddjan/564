@@ -127,6 +127,19 @@ class MeditationViewController: UIViewController {
         return stackView
     }()
     
+    private let breathingExerciseButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Pre-Meditation Breathing", for: .normal)
+        button.setTitleColor(UIColor(red: 0.4, green: 0.3, blue: 0.8, alpha: 1.0), for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 12
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor(red: 0.4, green: 0.3, blue: 0.8, alpha: 1.0).cgColor
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -155,6 +168,7 @@ class MeditationViewController: UIViewController {
         view.addSubview(durationContainerView)
         view.addSubview(startButton)
         view.addSubview(presetButtonsStackView)
+        view.addSubview(breathingExerciseButton)
         
         // Add timer elements to container
         timerContainerView.addSubview(timerLabel)
@@ -251,13 +265,20 @@ class MeditationViewController: UIViewController {
             presetButtonsStackView.topAnchor.constraint(equalTo: startButton.bottomAnchor, constant: 30),
             presetButtonsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             presetButtonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            presetButtonsStackView.heightAnchor.constraint(equalToConstant: 44)
+            presetButtonsStackView.heightAnchor.constraint(equalToConstant: 44),
+            
+            // Breathing exercise button
+            breathingExerciseButton.topAnchor.constraint(equalTo: presetButtonsStackView.bottomAnchor, constant: 20),
+            breathingExerciseButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            breathingExerciseButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            breathingExerciseButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
     private func setupActions() {
         startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
         durationTextField.addTarget(self, action: #selector(durationTextFieldChanged), for: .editingChanged)
+        breathingExerciseButton.addTarget(self, action: #selector(breathingExerciseButtonTapped), for: .touchUpInside)
         
         // Add tap gesture for stepper
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(stepperTapped))
@@ -309,6 +330,16 @@ class MeditationViewController: UIViewController {
             timeRemaining = minutes * 60
             updateTimerDisplay()
         }
+    }
+    
+    @objc private func breathingExerciseButtonTapped() {
+        let breathingVC = BreathingExerciseViewController(isStandalone: false) { [weak self] in
+            // Optionally start meditation after breathing exercise
+            // Uncomment to auto-start meditation:
+            // self?.startTimer()
+        }
+        breathingVC.modalPresentationStyle = .fullScreen
+        present(breathingVC, animated: true)
     }
     
     // MARK: - Timer Functions

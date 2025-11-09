@@ -14,6 +14,7 @@
 		A1234567890ABCDEF1234570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF123456F /* Assets.xcassets */; };
 		A1234567890ABCDEF1234573 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF1234571 /* LaunchScreen.storyboard */; };
 		A1234567890ABCDEF123457B /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF123457C /* HealthKitManager.swift */; };
+		A1234567890ABCDEF123457D /* BreathingExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1234567890ABCDEF123457E /* BreathingExerciseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A1234567890ABCDEF1234572 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1234567890ABCDEF1234574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1234567890ABCDEF123457C /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		A1234567890ABCDEF123457E /* BreathingExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingExerciseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				A1234567890ABCDEF1234568 /* SceneDelegate.swift */,
 				A1234567890ABCDEF123456A /* MeditationViewController.swift */,
 				A1234567890ABCDEF123457C /* HealthKitManager.swift */,
+				A1234567890ABCDEF123457E /* BreathingExerciseViewController.swift */,
 				A1234567890ABCDEF123456C /* Main.storyboard */,
 				A1234567890ABCDEF123456F /* Assets.xcassets */,
 				A1234567890ABCDEF1234571 /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 				A1234567890ABCDEF1234567 /* AppDelegate.swift in Sources */,
 				A1234567890ABCDEF1234569 /* SceneDelegate.swift in Sources */,
 				A1234567890ABCDEF123457B /* HealthKitManager.swift in Sources */,
+				A1234567890ABCDEF123457D /* BreathingExerciseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
